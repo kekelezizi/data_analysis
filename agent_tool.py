@@ -10,7 +10,8 @@ from report import build_report, export_report
 from ai_analyzer import generate_ai_analysis
 from chart_builder import add_chart_to_workbook
 from report_writer import export_markdown_report
-from send_email import send_email, build_email_body
+from send_email import send_email
+from email_body_builder import build_email_body
 
 load_dotenv()
 
@@ -45,8 +46,8 @@ def build_summary(reports):
 
 def run_sales_report_tool(
   input_path,
-  output_excel_path='output/agent_report.xlsx',
-  output_markdown_path='output/agent_report.md',
+  output_excel_path='outputs/agent_report.xlsx',
+  output_markdown_path='outputs/agent_report.md',
   generate_chart=True,
   generate_markdown=True,
   need_send_email=False,
